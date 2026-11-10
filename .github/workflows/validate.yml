@@ -24,4 +24,4 @@ jobs:
         run: make validate
 
       - name: Run unit tests
-        run: python3 -m pytest scripts/test_annotation_transform.py -v
+        run: python3 scripts/test_annotation_transform.py -v
