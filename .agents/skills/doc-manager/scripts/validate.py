@@ -23,7 +23,7 @@ def math_errors(body):
  return out
 def main():
  ap=argparse.ArgumentParser(); ap.add_argument("root",nargs="?",default="."); a=ap.parse_args(); root=Path(a.root).resolve(); errors=[]; nodes={}; bodies={}; data={}
- skip={"README.md","WIKI_CHARTER.md","concept-index.md","example-index.md","glossary.md","overview-learning-path.md","references.md"}
+ skip={"README.md","WIKI_CHARTER.md","concept-index.md","example-index.md","glossary.md","overview-learning-path.md","references.md","CONTRIBUTING.md"}
  charter=root/"WIKI_CHARTER.md"
  if not charter.exists(): errors.append("missing required WIKI_CHARTER.md")
  else:
@@ -31,7 +31,7 @@ def main():
   for h in CHARTER_HEADINGS:
    if not re.search(r"^##\s+"+re.escape(h)+r"\s*$",ct,re.M): errors.append(f"WIKI_CHARTER.md: missing heading {h!r}")
  for p in root.rglob("*.md"):
-  if any(x in p.parts for x in (".agents","viewer","__pycache__")) or p.name in skip: continue
+  if any(x in p.parts for x in (".agents","viewer","__pycache__",".github")) or p.name in skip: continue
   try: d,b=node(p)
   except ValueError as e: errors.append(f"{p.relative_to(root)}: {e}"); continue
   missing=REQ-set(d)
