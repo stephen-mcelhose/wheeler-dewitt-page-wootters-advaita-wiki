@@ -138,7 +138,7 @@ def main() -> int:
             })
             continue
 
-        if kind not in {"concept", "example", "guide"}:
+        if kind not in {"concept", "example", "guide", "meditation"}:
             continue
 
         # body_markdown is the reader-facing transformed body.
@@ -155,7 +155,7 @@ def main() -> int:
         node.setdefault("relationships", [])
         node.setdefault("sources", [])
 
-        if kind == "concept":
+        if kind in {"concept", "meditation"}:
             concepts.append(node)
         elif kind == "example":
             examples.append(node)
