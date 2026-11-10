@@ -30,8 +30,13 @@ explorer-server.log
 *.swo
 *~
 
-# Node (viewer tooling)
+# Release archives
+*.zip
+
+# Node (web tooling)
 node_modules/
+web/src/data.ts
+web/dist/
 
 # Agent operational files (session-specific, not project content)
 .agents/handoffs/
