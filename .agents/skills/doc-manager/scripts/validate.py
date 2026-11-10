@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse, json, re, sys
 from pathlib import Path
-TYPES={"concept","definition","guide","redirect","example"}
+TYPES={"concept","definition","guide","redirect","example","meditation"}
 STATUSES={"draft","ai_reviewed","approved"}
 REL_TYPES={"prerequisite-for","formalizes","addresses","derives-from","limitation","contrasts-with","analogical-comparison","historical-context","uses","illustrates","related-to"}
 REQ={"schema_version","id","type","title","summary","review_status","relationships","sources"}
@@ -31,7 +31,7 @@ def main():
   for h in CHARTER_HEADINGS:
    if not re.search(r"^##\s+"+re.escape(h)+r"\s*$",ct,re.M): errors.append(f"WIKI_CHARTER.md: missing heading {h!r}")
  for p in root.rglob("*.md"):
-  if any(x in p.parts for x in (".agents","viewer","__pycache__",".github")) or p.name in skip: continue
+  if any(x in p.parts for x in (".agents","viewer","__pycache__",".github","web")) or p.name in skip: continue
   try: d,b=node(p)
   except ValueError as e: errors.append(f"{p.relative_to(root)}: {e}"); continue
   missing=REQ-set(d)
