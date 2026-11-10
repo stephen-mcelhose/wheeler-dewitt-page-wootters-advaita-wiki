@@ -1,0 +1,68 @@
+---
+{
+  "schema_version": "2.0",
+  "id": "hamiltonian-phase-space-and-poisson-brackets",
+  "type": "concept",
+  "title": "Hamiltonian Phase Space and Poisson Brackets",
+  "summary": "Canonical phase space, Poisson brackets, and externally timed Hamiltonian flow in a bounded finite-dimensional setting.",
+  "review_status": "draft",
+  "parents": ["classical-canonical-mechanics-primer"],
+  "relationships": [
+    {"type": "prerequisite-for", "target": "constrained-systems"},
+    {"type": "prerequisite-for", "target": "parametrized-particle"},
+    {"type": "illustrates", "target": "example-harmonic-oscillator-poisson-bracket"},
+    {"type": "related-to", "target": "def-phase-space"},
+    {"type": "related-to", "target": "def-poisson-bracket"},
+    {"type": "related-to", "target": "def-hamiltonian-flow"}
+  ],
+  "sources": [
+    {"title": "V. I. Arnold, Mathematical Methods of Classical Mechanics", "url": "https://doi.org/10.1007/978-1-4757-2063-1", "persistent_id": "doi:10.1007/978-1-4757-2063-1"},
+    {"title": "M. Henneaux and C. Teitelboim, Quantization of Gauge Systems", "url": "https://press.princeton.edu/books/paperback/9780691037691/quantization-of-gauge-systems", "persistent_id": "ISBN:9780691037691"}
+  ],
+  "inline_definitions": [
+    {"definition_id": "phase-space", "term": "phase space", "occurrence": "first"},
+    {"definition_id": "poisson-bracket", "term": "Poisson bracket", "occurrence": "first"},
+    {"definition_id": "hamiltonian-flow", "term": "Hamiltonian flow", "occurrence": "first"}
+  ]
+}
+---
+# Hamiltonian Phase Space and Poisson Brackets
+
+## Scope and coordinates
+
+Work locally on a finite-dimensional smooth {{def:phase-space|phase space}} with canonical coordinates \((q^i,p_i)\), where \(q^i\) are configuration coordinates and \(p_i\) their conjugate momenta. A quantity is a smooth phase-space function \(F(q,p,t)\). This coordinate formula is local; it is not a claim that every physical phase space has one global canonical chart.
+
+The {{def:poisson-bracket|Poisson bracket}} of two such functions is
+
+\[
+\{F,G\}=\sum_i\left(
+\frac{\partial F}{\partial q^i}\frac{\partial G}{\partial p_i}
+-\frac{\partial F}{\partial p_i}\frac{\partial G}{\partial q^i}
+\right).
+\]
+
+Read \(\partial F/\partial q^i\) as “the partial derivative of \(F\) with respect to \(q^i\), holding the other displayed coordinates fixed.” In particular, \(\{q^i,p_j\}=\delta^i{}_j\), while \(\{q^i,q^j\}=\{p_i,p_j\}=0\).
+
+## External-time Hamiltonian flow
+
+Given a Hamiltonian \(H(q,p,t)\), its {{def:hamiltonian-flow|Hamiltonian flow}} is the curve obtained from
+
+\[
+\dot q^i=\{q^i,H\}=\frac{\partial H}{\partial p_i},
+\qquad
+\dot p_i=\{p_i,H\}=-\frac{\partial H}{\partial q^i}.
+\]
+
+The dot means \(d/dt\), where \(t\) is the external time of the regular mechanical model. Along that flow,
+
+\[
+\frac{dF}{dt}=\{F,H\}+\frac{\partial F}{\partial t}.
+\]
+
+Thus \(F\) is conserved in an autonomous model when \(\partial F/\partial t=0\) and \(\{F,H\}=0\). A Hamiltonian can be explicitly time dependent, so \(H\) itself is not automatically conserved.
+
+## Boundary before constraints
+
+A constraint also has a Hamiltonian vector field, but that fact alone does **not** make it ordinary external-time evolution. In the constrained setting, a first-class constraint may generate motion among gauge-related descriptions. We will label that curve by a gauge parameter \(s\), never call \(s\) time, and state separately when an internal variable can serve as a local orbit label.
+
+This is classical bracket notation, not the quantum commutator. Its finite-dimensional coordinate treatment does not cover functional Poisson brackets, boundary charges, or the constraint algebra of general relativity.

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Release gate for definitions introduced as required first-use vocabulary. Each entry must be wired as an inline definition in every named canonical concept, and the annotation transform must resolve it exactly once per consumer.",
+  "definitions": {
+    "constrained-history-state": ["constrained-clock-system-models"],
+    "ideal-clock-state-family": ["clock-states"],
+    "covariant-time-povm": ["clock-states", "clock-povms"],
+    "clock-reading-and-external-time": ["clock-povms"],
+    "clock-quality": ["finite-clock-model"],
+    "multiple-choice-problem": ["page-wootters-limitations"]
+  }
+}

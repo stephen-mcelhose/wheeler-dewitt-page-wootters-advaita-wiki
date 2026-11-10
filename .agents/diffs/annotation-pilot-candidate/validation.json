@@ -1,0 +1,30 @@
+{
+  "baseline": "/app/artifacts/instances/ReactComponent/quantum-time-wiki-explorer/current.json",
+  "candidate": "/app/workspace/wheeler-dewitt-page-wootters-advaita-wiki/.agents/diffs/annotation-pilot-candidate/current.json",
+  "transform": "parse baseline JSON and /data.ts; replace only five JSON body literals with hash-verified annotation_transform test outputs",
+  "pilot_ids": [
+    "hilbert-spaces",
+    "dirac-notation",
+    "wheeler-dewitt-formalism",
+    "page-wootters-mechanism",
+    "jon-projection-story"
+  ],
+  "checks": {
+    "data_ts_nonempty": true,
+    "concept_count_34": true,
+    "definition_count_58": true,
+    "pilot_ids_present_and_full_bodies": true,
+    "manifest_schema_annotations_match": true,
+    "completeness_surface_form_corrected": true,
+    "wheeler_dewitt_ordinary_internal_link_exists": true,
+    "warnings_preserved": true,
+    "no_broad_content_shrink": true,
+    "only_target_concept_bodies_changed": true,
+    "quote_renderer_separate_from_warning_handling": true,
+    "renderer_preserves_v14_math_and_definition_styles": true,
+    "typescript_compile_passes": true
+  },
+  "baseline_data_chars": 74815,
+  "candidate_data_chars": 74815,
+  "compiler_output": ""
+}

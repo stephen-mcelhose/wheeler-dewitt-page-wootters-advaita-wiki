@@ -1,0 +1,43 @@
+# Concept Index
+
+Generated; run `make index` after content changes.
+
+- [Bases and Coordinates](mathematics/bases-and-coordinates.md) — How a chosen independent spanning set gives unique coordinates to vectors in a finite-dimensional space.
+- [Born Rule and Quantum Probability](mathematics/born-rule-and-quantum-probability.md) — The measurement rule that turns amplitudes and projectors into probabilities.
+- [Canonical Gravity and the ADM Split](physics/canonical-gravity.md) — The Hamiltonian formulation of general relativity obtained from a 3+1 decomposition.
+- [Classical Canonical Mechanics Primer](mathematics/classical-canonical-mechanics-primer.md) — A bounded finite-dimensional introduction to Lagrangians, conjugate momenta, Hamiltonians, and externally timed Hamiltonian evolution.
+- [Classical Constrained Systems](mathematics/constrained-systems.md) — A scoped Dirac–Bergmann introduction to constraint surfaces, constraint classes, and local gauge flow.
+- [Clock POVMs and Operational Conditioning](page-wootters/clock-povms.md) — A finite-resolution formulation of clock readings and conditional quantum states.
+- [Clock States and Sign Convention](page-wootters/clock-states.md) — The idealized clock representation required to derive conditional Schrödinger evolution.
+- [Composite Quantum Systems](mathematics/composite-systems.md) — Finite-dimensional tensor-product systems, product and entangled pure states, density operators, and unconditioned reduced states.
+- [Conditional Page–Wootters State](page-wootters/conditional-page-wootters-state.md) — The normalized system state relative to an idealized clock reading.
+- [Constrained Clock–System Models](page-wootters/constrained-clock-system-models.md) — The selected bipartite constrained models in which Page–Wootters correlations can support relational clock readings.
+- [Dirac Notation](mathematics/dirac-notation.md) — A compact notation for vectors, dual vectors, inner products, and operators in Hilbert space.
+- [Dirac Quantization and Physical States](mathematics/dirac-quantization.md) — A constrained-quantization program that separates a kinematical representation, formal quantum-constraint solutions, and a completed physical construction.
+- [Dirac Quantization in Canonical Gravity](physics/dirac-quantization-gravity.md) — Formal imposition of local gravitational constraints on a kinematical representation.
+- [Exploratory Model: JON, Brackets, and Projection](philosophy/jon-projection-story.md) — A personal, exploratory mathematical model using JON as a named state vector; it is not a physics claim about individuality or māyā.
+- [Finite Clock Models](page-wootters/finite-clock-model.md) — Discrete clock models that make relational conditioning calculable before ideal time states are used.
+- [Formal and Physical State Spaces](mathematics/formal-and-physical-state-spaces.md) — A distinction among the kinematical representation, formal constraint solutions, and the space carrying physical amplitudes.
+- [Geometric and Field-Theoretic Prerequisites for ADM](mathematics/geometric-and-field-theoretic-prerequisites-for-adm.md) — The spatial geometric and field-variable language needed before the ADM canonical formulation.
+- [Hamiltonian Phase Space and Poisson Brackets](mathematics/hamiltonian-phase-space-and-poisson-brackets.md) — Canonical phase space, Poisson brackets, and externally timed Hamiltonian flow in a bounded finite-dimensional setting.
+- [Hamiltonian and Momentum Constraints](physics/adm-constraints.md) — The local constraints encoding normal and tangential hypersurface deformations.
+- [Hilbert Spaces](mathematics/hilbert-spaces.md) — Complete inner-product spaces: the mathematical setting for quantum state vectors.
+- [Hypersurface-Deformation Algebra](physics/constraint-algebra.md) — The first-class constraint relations of canonical general relativity.
+- [Inner-Product Spaces](mathematics/inner-product-spaces.md) — Vector spaces with a complex-valued comparison rule that defines length and orthogonality.
+- [Limits of the Page–Wootters Mechanism](page-wootters/page-wootters-limitations.md) — The assumptions and unresolved quantum-gravity issues not removed by relational conditioning.
+- [Measurements and Conditional States](mathematics/conditional-states.md) — Finite-dimensional outcome probabilities, effect-conditioned system states, instrument-selective joint updates, and the ideal Lüders boundary.
+- [Māyā](philosophy/maya.md) — An Advaita term connected to appearance, plurality, and the qualification of ordinary experience.
+- [Norms, Distance, and Convergence](mathematics/norms-distance-and-convergence.md) — The notions needed to make completeness meaningful.
+- [Operators, Domains, and Self-Adjointness](mathematics/operators-and-domains.md) — Operator/domain pairs, finite C² checks, and the limits of finite evidence for unboundedness, density, and self-adjointness.
+- [Optional Philosophical Orientation: Advaita Vedānta](philosophy/advaita-orientation.md) — A separate, non-physics introduction to the non-dualist Vedānta tradition.
+- [Page–Wootters Mechanism](page-wootters/page-wootters-mechanism.md) — A relational-time construction in which conditional subsystem dynamics arise from correlations in a constrained global state.
+- [Parametrized Particle](physics/parametrized-particle.md) — A constrained toy model that separates gauge parameterization from relational evolution.
+- [Physics–Philosophy Method Boundary](philosophy/physics-method-boundary.md) — Rules for using analogies without converting them into claims of identity or proof.
+- [Projection Operators](mathematics/projection-operators.md) — Operators that retain a specified subspace component; rank-one projectors model sharp yes/no alternatives.
+- [Quantum States, Rays, and Normalization](mathematics/quantum-states-rays-and-normalization.md) — How mathematical vectors represent pure physical quantum states.
+- [Relational and Complete Observables](physics/relational-observables.md) — Physical predictions formulated as correlations among dynamical degrees of freedom.
+- [Spacetime Foliations and General Relativity Primer](physics/spacetime-foliations-and-general-relativity-primer.md) — The geometric bridge from constrained mechanics to the 3+1 canonical formulation of general relativity.
+- [Spectra and Generalized Bases](mathematics/spectral-notation.md) — The distinction between discrete bases in a Hilbert space and generalized continuous-spectrum notation.
+- [Superspace and Minisuperspace](physics/superspace.md) — Formal configuration-space settings for canonical gravity and controlled symmetry-reduced illustrations.
+- [The Problems of Time](physics/problem-of-time.md) — A family of conceptual and technical issues caused by combining general covariance with quantum theory.
+- [Wheeler–DeWitt Formalism](physics/wheeler-dewitt-formalism.md) — The formal local quantum constraints of canonical gravity, together with their unresolved definition problems.

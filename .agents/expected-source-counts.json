@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "approved_by": "user",
+  "purpose": "Expected canonical source node counts for reconciliation before content/data preview generation.",
+  "reconciliation_note": "Approved update after intentional additions requested to complete Unit E: Formal Constraint Solution definition and paired finite C³ Dirac-quantization/physical-pairing worked example.",
+  "counts": {
+    "concept": 39,
+    "definition": 91,
+    "example": 19,
+    "guide": 1,
+    "total": 150
+  }
+}

@@ -1,0 +1,27 @@
+# csgdaa-code workspace config
+# This file specifies which files Git should ignore in this directory
+
+# Session data (may contain sensitive conversation history)
+sessions/
+
+# Operational files (session-specific, not project content)
+handoffs/
+issues/
+plans/
+research/
+
+# Permissions (user/machine specific)
+permissions.json
+
+# Debug logs
+debug.log
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Editor files
+.DS_Store
+*.swp
+*~

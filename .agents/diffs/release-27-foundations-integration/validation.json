@@ -1,0 +1,36 @@
+{
+  "release": "version 28",
+  "live": "/app/artifacts/instances/ReactComponent/quantum-time-wiki-explorer/current.json",
+  "live_sha256": "76efd5cddc1186d0850e24e49fd8c091231512fa197635e76bf5b884fdd99ff5",
+  "candidate": "/app/workspace/wheeler-dewitt-page-wootters-advaita-wiki/.agents/diffs/release-27-foundations-integration/current.json",
+  "counts": {
+    "concepts": 38,
+    "definitions": 67,
+    "examples": 9,
+    "total_nodes": 114,
+    "annotation_pages": 33,
+    "annotations": 84
+  },
+  "data_chars": {
+    "live": 492,
+    "candidate": 102686
+  },
+  "checks": {
+    "candidate_arrays_nonempty": true,
+    "all_source_concept_bodies_reflected": true,
+    "all_current_source_graph_counts": true,
+    "all_schema_annotations_generated": true,
+    "new_bases_concept_and_definitions_present": true,
+    "new_examples_present": true,
+    "no_material_shrink": true,
+    "popover_math_renderer_retained": true,
+    "definition_and_link_styling_retained": true,
+    "quote_and_warning_behavior_retained": true,
+    "philosophy_warnings_retained": true,
+    "optional_bucket_fallback_present": true,
+    "typescript_compile_passes": true,
+    "release_smoke_check_passes": true
+  },
+  "compiler_output": "",
+  "smoke_output": "release smoke-check passed: optional domain buckets have no unsafe direct access"
+}

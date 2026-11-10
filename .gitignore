@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Generated viewer artifacts
+viewer/wiki-data.json
+viewer/explorer-manifest.json
+
+# Logs
+*.log
+explorer-server.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (viewer tooling)
+node_modules/
+
+# Agent operational files (session-specific, not project content)
+.agents/handoffs/
+.agents/issues/
+.agents/plans/
+.agents/research/

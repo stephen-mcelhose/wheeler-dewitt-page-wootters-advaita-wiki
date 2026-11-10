@@ -1,0 +1,27 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate wiki content
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # ratchet:actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2f # ratchet:actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate wiki graph
+        run: make validate
+
+      - name: Run unit tests
+        run: python3 -m pytest scripts/test_annotation_transform.py -v

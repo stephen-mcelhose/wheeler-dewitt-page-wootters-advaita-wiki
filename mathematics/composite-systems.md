@@ -1,0 +1,127 @@
+---
+{
+  "schema_version": "2.0",
+  "id": "composite-systems",
+  "type": "concept",
+  "title": "Composite Quantum Systems",
+  "summary": "Finite-dimensional tensor-product systems, product and entangled pure states, density operators, and unconditioned reduced states.",
+  "review_status": "ai_reviewed",
+  "parents": [
+    "dirac-notation",
+    "operators-and-domains"
+  ],
+  "relationships": [
+    {
+      "type": "prerequisite-for",
+      "target": "conditional-states"
+    },
+    {
+      "type": "prerequisite-for",
+      "target": "page-wootters-mechanism"
+    },
+    {
+      "type": "illustrates",
+      "target": "example-composite-bell-state-partial-trace"
+    },
+    {
+      "type": "related-to",
+      "target": "def-tensor-product"
+    },
+    {
+      "type": "related-to",
+      "target": "def-density-operator"
+    },
+    {
+      "type": "related-to",
+      "target": "def-partial-trace"
+    },
+    {
+      "type": "related-to",
+      "target": "def-reduced-state"
+    },
+    {
+      "type": "related-to",
+      "target": "def-entanglement"
+    }
+  ],
+  "sources": [
+    {
+      "title": "M. Nielsen and I. Chuang, Quantum Computation and Quantum Information",
+      "url": "https://doi.org/10.1017/CBO9780511976667",
+      "persistent_id": "doi:10.1017/CBO9780511976667"
+    }
+  ],
+  "inline_definitions": [
+    {
+      "definition_id": "tensor-product",
+      "term": "tensor product",
+      "occurrence": "first"
+    },
+    {
+      "definition_id": "entanglement",
+      "term": "entanglement",
+      "occurrence": "first"
+    },
+    {
+      "definition_id": "density-operator",
+      "term": "density operator",
+      "occurrence": "first"
+    },
+    {
+      "definition_id": "partial-trace",
+      "term": "partial trace",
+      "occurrence": "first"
+    },
+    {
+      "definition_id": "reduced-state",
+      "term": "reduced state",
+      "occurrence": "first"
+    }
+  ]
+}
+---
+# Composite Quantum Systems
+
+## Finite-dimensional scope and factor order
+
+Work first with finite-dimensional Hilbert spaces \(\mathcal H_C\) and \(\mathcal H_S\), labelled clock factor \(C\) and system factor \(S\). Their composite is the {{def:tensor-product|tensor product}}
+\[
+\mathcal H_{CS}=\mathcal H_C\otimes\mathcal H_S.
+\]
+Factor order is a representation convention: \(|c\rangle_C\otimes|s\rangle_S\), abbreviated \(|c\rangle_C|s\rangle_S\), puts clock coordinates first. If both factors use the ordered basis \((|0\rangle,|1\rangle)\), use
+\[
+(|0\rangle_C|0\rangle_S,\ |0\rangle_C|1\rangle_S,\ |1\rangle_C|0\rangle_S,\ |1\rangle_C|1\rangle_S).
+\]
+Thus \(|1\rangle_C|0\rangle_S\) is \((0,0,1,0)^T\) in this selected product basis. Reversing factors requires an explicit swap map; it is not implicit.
+
+The inner product on simple tensors is
+\[
+\langle c_1\otimes s_1\mid c_2\otimes s_2\rangle
+=\langle c_1|c_2\rangle_C\langle s_1|s_2\rangle_S,
+\]
+and is extended linearly. This presentation deliberately defers completion and domain details for general infinite-dimensional tensor products.
+
+## Product states, entanglement, and density operators
+
+A pure joint state is a normalized vector \(|\Psi\rangle\in\mathcal H_C\otimes\mathcal H_S\), understood up to ray. It is a product state if \(|\Psi\rangle=|c\rangle\otimes|s\rangle\) for normalized factor vectors. {{def:entanglement|Entanglement}} of a pure bipartite state means failure of that product form. It is relative to the specified bipartition \(C:S\), not an absolute property of an unfactored system.
+
+A {{def:density-operator|density operator}} \(\rho_{CS}\) is positive semidefinite and has trace one. A pure vector yields \(\rho_{CS}=|\Psi\rangle\langle\Psi|\); density operators also describe mixtures. The product-versus-entangled test just stated is for pure bipartite states. Mixed-state separability needs a separate convex-combination definition and cannot be decided by asking whether a density operator is one tensor product.
+
+## Reduced state: discard a factor, do not select an outcome
+
+The {{def:partial-trace|partial trace}} over \(C\) gives the {{def:reduced-state|reduced state}}
+\[
+\rho_S=\operatorname{Tr}_C(\rho_{CS}).
+\]
+It is characterized by
+\[
+\operatorname{Tr}_S(A_S\rho_S)=
+\operatorname{Tr}_{CS}[(I_C\otimes A_S)\rho_{CS}]
+\]
+for every system operator \(A_S\). It therefore supplies statistics for system-only observables when the clock factor is ignored. For \(\rho_C\otimes\rho_S\), tracing out \(C\) returns \(\rho_S\); an entangled pure joint state can instead have a mixed reduced state.
+
+A reduced state is unconditioned: it selects no outcome and asserts no measurement update. Conditioning on a clock outcome is treated in [Measurements and Conditional States](conditional-states.md).
+
+## Scope boundary
+
+The factor labels in this finite model are assumed, not derived. In constrained or gravitational theories a clock/system factorization can be nonunique, approximate, or unavailable after constraints. Nothing here establishes a preferred physical clock, a continuous ideal clock, or a factorization of full gravity.

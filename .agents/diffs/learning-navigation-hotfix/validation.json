@@ -1,0 +1,25 @@
+{
+  "release": "version 29",
+  "candidate": "/app/workspace/wheeler-dewitt-page-wootters-advaita-wiki/.agents/diffs/learning-navigation-hotfix/current.json",
+  "base": "/app/workspace/wheeler-dewitt-page-wootters-advaita-wiki/.agents/diffs/release-27-foundations-integration/current.json",
+  "learning_order_count": 38,
+  "checks": {
+    "annotation_tests": true,
+    "index_graph_validation": true,
+    "typescript_compile": true,
+    "optional_domain_smoke": true,
+    "learning_order_parser": true,
+    "learning_order_validator": true,
+    "candidate_completeness_preservation": true,
+    "canonical_source_count": true
+  },
+  "outputs": {
+    "annotation_tests": "test_all_concept_schemas_are_real_unique_matched_and_safe (__main__.AnnotationTransformTests.test_all_concept_schemas_are_real_unique_matched_and_safe) ... ok\ntest_bold_wrapped_explicit_override_is_structurally_preserved (__main__.AnnotationTransformTests.test_bold_wrapped_explicit_override_is_structurally_preserved) ... ok\ntest_explicit_override_is_retained_and_never_double_annotated (__main__.AnnotationTransformTests.test_explicit_override_is_retained_and_never_double_annotated) ... ok\ntest_five_pilot_pages_transform_with_strong_invariants (__main__.AnnotationTransformTests.test_five_pilot_pages_transform_with_strong_invariants) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.029s\n\nOK",
+    "index_graph_validation": "Indexed 114 nodes.\nValidation passed: 114 graph nodes.",
+    "typescript_compile": "",
+    "optional_domain_smoke": "release smoke-check passed: optional domain buckets have no unsafe direct access",
+    "learning_order_parser": "learning-order passed: 38 canonical concepts",
+    "learning_order_validator": "learning-navigation validation passed: 38 ordered concepts; unlabeled controls use learningOrder only"
+  },
+  "candidate_sha256": "7337f6c2006771120e1665c7f461d67405dc26b67526e30b4d059d853e30f148"
+}

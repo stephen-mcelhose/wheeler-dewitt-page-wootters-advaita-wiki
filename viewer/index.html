@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiki Explorer</title>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]} ,svg:{fontCache:'global'}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--ink:#18212b;--nav:#f3f6f8;--blue:#075da8;--muted:#52606d;--card:#f5f5f5}
+body{font:16px system-ui,sans-serif;margin:0;display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh;color:var(--ink)}
+aside{padding:16px;background:var(--nav);overflow:auto}main{max-width:920px;padding:30px 36px;line-height:1.6}input{width:95%;padding:8px}a{color:var(--blue);cursor:pointer}li{margin:7px 0}.meta{background:var(--card);padding:12px;border-radius:6px}code{background:#eee;padding:2px}pre{white-space:pre-wrap}.status{float:right;border-radius:10px;padding:1px 8px;font-size:.75rem;background:#dbeafe;color:#1e3a8a}.status.draft{background:#fef3c7;color:#78350f}.status.approved{background:#dcfce7;color:#166534}h1,h2,h3{color:#123d61}.content ul{padding-left:24px}.content p{margin:0 0 1em}.math-warning{color:var(--muted);font-size:.85rem}@media(max-width:720px){body{display:block}aside{max-height:35vh}main{padding:22px}}
+</style>
+</head>
+<body>
+<aside><h2>Explore</h2><input id="q" placeholder="Search"><div id="nav"></div></aside>
+<main id="page">Loading…</main>
+<script>
+let nodes=[],byId={};
+const esc=s=>String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function inline(s){return esc(s).replace(/\[([^\]]+)\]\(([^ )]+)\)/g,(_,t,u)=>'<a data-path="'+u.replace(/"/g,'&quot;')+'">'+t+'</a>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>')}
+function md(s){let lines=s.split('\n'),out=[],inList=false,inDisplay=false,display=[];function close(){if(inList){out.push('</ul>');inList=false}};for(const line of lines){if(line.trim()==='\\['){close();inDisplay=true;display=[];continue}if(line.trim()==='\\]'){out.push('<div>\\['+display.join('\n')+'\\]</div>');inDisplay=false;continue}if(inDisplay){display.push(line);continue}if(/^### /.test(line)){close();out.push('<h3>'+inline(line.slice(4))+'</h3>')}else if(/^## /.test(line)){close();out.push('<h2>'+inline(line.slice(3))+'</h2>')}else if(/^# /.test(line)){close();out.push('<h1>'+inline(line.slice(2))+'</h1>')}else if(/^- /.test(line)){if(!inList){out.push('<ul>');inList=true}out.push('<li>'+inline(line.slice(2))+'</li>')}else if(!line.trim()){close()}else{close();out.push('<p>'+inline(line)+'</p>')}}close();return out.join('')}
+function nav(){let t=q.value.toLowerCase();navel.innerHTML='<ul>'+nodes.filter(n=>(n.title+n.summary+n.type).toLowerCase().includes(t)).map(n=>'<li><a onclick="go(\''+n.id+'\')">'+esc(n.title)+'</a><small> · '+n.type+'</small></li>').join('')+'</ul>'}
+function goPath(p){let clean=p.replace(/^\.\.\//,'');let n=nodes.find(x=>x.path===clean)||nodes.find(x=>x.path.endsWith('/'+p.split('/').pop()));if(n)go(n.id)}
+function go(id){let n=byId[id];if(!n)return;location.hash=id;let back=nodes.filter(x=>(x.relationships||[]).some(r=>r.target===id));let rel=(n.relationships||[]).map(r=>'<li><strong>'+esc(r.type)+'</strong>: <a onclick="go(\''+r.target+'\')">'+esc((byId[r.target]||{}).title||r.target)+'</a> '+esc(r.note||'')+'</li>').join('')||'<li>None</li>';let src=(n.sources||[]).map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title)+'</a> · '+esc(s.persistent_id)+'</li>').join('')||'<li>None recorded</li>';let facets=n.type==='example'?'<h2>Example metadata</h2><div class="meta">'+['status','patterns','modality','topics','teaches','prerequisites','action','non_conclusion'].map(k=>'<strong>'+k+'</strong>: '+esc(Array.isArray(n[k])?n[k].join(', '):n[k]||'')).join('<br>')+'</div>':'';let status=esc(n.review_status||'draft');page.innerHTML='<h1>'+esc(n.title)+' <span class="status '+status+'">'+status+'</span></h1><p>'+esc(n.summary)+'</p><div class="meta"><strong>Type</strong>: '+esc(n.type)+' · <strong>ID</strong>: '+esc(n.id)+' · <strong>Review</strong>: '+status+'</div><div class="content">'+md(n.body)+'</div>'+facets+'<h2>Relationships</h2><ul>'+rel+'</ul><h2>Sources</h2><ul>'+src+'</ul><h2>Backlinks</h2><ul>'+back.map(x=>'<li><a onclick="go(\''+x.id+'\')">'+esc(x.title)+'</a></li>').join('')+'</ul><p class="math-warning">Mathematics uses MathJax and requires access to its CDN when this explorer is opened locally.</p>';if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise([page])}}
+const navel=document.querySelector('#nav'),q=document.querySelector('#q'),page=document.querySelector('#page');q.oninput=nav;page.addEventListener('click',event=>{let link=event.target.closest('a[data-path]');if(link){event.preventDefault();goPath(link.dataset.path)}});fetch('wiki-data.json').then(r=>r.json()).then(d=>{nodes=d.nodes;nodes.forEach(n=>byId[n.id]=n);nav();go(location.hash.slice(1)||nodes[0]?.id)});
+</script>
+</body></html>

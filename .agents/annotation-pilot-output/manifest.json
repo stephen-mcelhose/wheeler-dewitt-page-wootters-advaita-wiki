@@ -1,0 +1,63 @@
+{
+  "tool": "annotation_transform.py",
+  "pages": {
+    "hilbert-spaces": {
+      "source": "mathematics/hilbert-spaces.md",
+      "source_sha256": "f3cd470bda6dfb8a69f6bae3a054629cf909d786131f1f6e23d16ff8f8337ffe",
+      "output_sha256": "283e8a79361dd9943b8e18ab66cf64bc8ad24e68d26db44a28cc37278e4cd069",
+      "annotations": [
+        "completeness",
+        "norm",
+        "cauchy-sequence",
+        "ray",
+        "normalization",
+        "orthogonality",
+        "born-rule"
+      ]
+    },
+    "dirac-notation": {
+      "source": "mathematics/dirac-notation.md",
+      "source_sha256": "dd14996bfb3b6d4622757afc9f0c14bd8c56c66e12a326b9bbee42790da0a86f",
+      "output_sha256": "ed0c7d4441fe5a2fedf0bba66ec831f9ed31f034066d63bb53e42051283db39a",
+      "annotations": [
+        "ket",
+        "bra",
+        "dual-vector",
+        "overlap",
+        "norm",
+        "discrete-basis",
+        "orthonormal-basis",
+        "kronecker-delta",
+        "resolution-of-identity",
+        "basis-expansion"
+      ]
+    },
+    "wheeler-dewitt-formalism": {
+      "source": "physics/wheeler-dewitt-formalism.md",
+      "source_sha256": "7dac2617bb656994775e34e65e730f3e175e7aadf70d7499c8c7e063b4900587",
+      "output_sha256": "2f93310c77ba40cac93d8d56f59d7dabfb5190e8b92eb3c3cd7d83bbbd5ba790",
+      "annotations": [
+        "functional-derivative"
+      ]
+    },
+    "page-wootters-mechanism": {
+      "source": "page-wootters/page-wootters-mechanism.md",
+      "source_sha256": "d7ad2e1795e2e1820046d028a955e14cfce36fe3a8c707bb2e7580a4eb95dadf",
+      "output_sha256": "2043b4c29906ce092a4900eb49014b31557a3b83727c0f818f4db075b7d2658d",
+      "annotations": [
+        "clock-system-factorization"
+      ]
+    },
+    "jon-projection-story": {
+      "source": "philosophy/jon-projection-story.md",
+      "source_sha256": "bf12797da0826e4180428385539a1da5f9582366fe1901a1314f5cfefc2ba217",
+      "output_sha256": "d244277961d6423167319cf2739e3a2ad590e210ca7d1925bf9368ce450b6f23",
+      "annotations": [
+        "ket",
+        "dual-vector",
+        "inner-product",
+        "projector"
+      ]
+    }
+  }
+}

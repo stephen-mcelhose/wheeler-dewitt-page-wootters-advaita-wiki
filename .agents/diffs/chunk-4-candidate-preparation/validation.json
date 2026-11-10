@@ -1,0 +1,40 @@
+{
+  "live_artifact": "/app/artifacts/instances/ReactComponent/quantum-time-wiki-explorer/current.json",
+  "live_sha256": "1da2bb4c1bd5952b38aebb4df723592f266dbb8a3748c97f00288af097807d48",
+  "candidate": "/app/workspace/wheeler-dewitt-page-wootters-advaita-wiki/.agents/diffs/chunk-4-candidate-preparation/current.json",
+  "source_schema_page_count": 32,
+  "source_annotation_count": 79,
+  "explicit_override_pages": [
+    "conditional-page-wootters-state",
+    "spacetime-foliations-and-general-relativity-primer"
+  ],
+  "baseline_data_chars": 74125,
+  "candidate_data_chars": 82817,
+  "concepts": 34,
+  "definitions": 63,
+  "total_nodes": 103,
+  "new_definition_ids": [
+    "physical-inner-product",
+    "conjugate-momentum",
+    "hamiltonian-constraint",
+    "momentum-constraint",
+    "dewitt-supermetric"
+  ],
+  "checks": {
+    "concept_count_34": true,
+    "definition_count_63": true,
+    "total_nodes_103_reflected_in_data": true,
+    "all_concept_bodies_nonempty": true,
+    "source_schema_exact_32_pages_79_annotations": true,
+    "candidate_annotation_count_matches_source_schema": true,
+    "canonical_concept_bodies_match_annotation_transforms": true,
+    "full_chunk_1_and_2_content_retained": true,
+    "philosophy_warnings_retained": true,
+    "definition_popover_uses_mathtext": true,
+    "ordinary_links_remain_distinct": true,
+    "all_five_new_definitions_present": true,
+    "no_material_data_shrink": true,
+    "typescript_compile_passes": true
+  },
+  "compiler_output": ""
+}
