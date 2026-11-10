@@ -6,13 +6,34 @@ A physics-student-first learning hub. It begins with mathematical foundations, p
 
 ## Build steps
 
-| Command        | What it does                                                                                      |
-| -------------- | ------------------------------------------------------------------------------------------------- |
-| `make explore` | Rebuilds the data, then starts a local HTTP server at `http://localhost:8000` — open that URL in your browser |
-| `make validate`| Validates the wiki graph: schema, controlled vocabulary, review-status, and relationship rules    |
-| `make index`   | Rebuilds `concept-index.md` and `example-index.md` from the source graph                         |
-| `make package` | Full release build — clean → index → validate → zip the wiki to `../wheeler-dewitt-page-wootters-advaita-wiki.zip` |
-| `make clean`   | Removes `__pycache__` directories and the generated `viewer/wiki-data.json`                       |
+| Command          | What it does                                                                                        |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| `make web-install` | Install React reader dependencies in `web/` (run once after cloning)                             |
+| `make web-data`  | Run `make index` then generate `web/src/data.ts` from the wiki graph                               |
+| `make web-dev`   | Generate data and launch the React reader dev server at `http://localhost:5173`                     |
+| `make web-build` | Generate data and produce a production build in `web/dist/`                                         |
+| `make explore`   | Alias for `make web-dev`                                                                            |
+| `make validate`  | Validates the wiki graph: schema, controlled vocabulary, review-status, and relationship rules      |
+| `make index`     | Rebuilds `concept-index.md`, `example-index.md`, and `viewer/wiki-data.json` from the source graph |
+| `make package`   | Full release build — clean → index → validate → zip the wiki                                       |
+| `make clean`     | Removes `__pycache__`, `viewer/wiki-data.json`, and generated `web/src/data.ts`                     |
+
+### First-time setup
+
+```bash
+make web-install  # install React reader dependencies (requires bun or npm)
+make web-dev      # builds data and opens the reader at http://localhost:5173
+```
+
+### Data pipeline
+
+```
+viewer/wiki-data.json          (built by make index)
+    → scripts/generate_web_data.py
+    → web/src/data.ts          (consumed by the React reader; gitignored — always generated)
+```
+
+`web/src/App.tsx` is the reader template — do not hand-edit it. Only `web/src/data.ts` changes with the wiki content.
 
 ### Run tests
 
