@@ -1,4 +1,4 @@
-explore:
+explore: index
 	python3 start-wiki.py
 validate:
 	python3 .agents/skills/doc-manager/scripts/validate.py .

@@ -8,7 +8,7 @@ A physics-student-first learning hub. It begins with mathematical foundations, p
 
 | Command        | What it does                                                                                      |
 | -------------- | ------------------------------------------------------------------------------------------------- |
-| `make explore` | Starts a local HTTP server and opens the interactive wiki explorer at `http://localhost:8000`     |
+| `make explore` | Rebuilds the data, then starts a local HTTP server at `http://localhost:8000` — open that URL in your browser |
 | `make validate`| Validates the wiki graph: schema, controlled vocabulary, review-status, and relationship rules    |
 | `make index`   | Rebuilds `concept-index.md` and `example-index.md` from the source graph                         |
 | `make package` | Full release build — clean → index → validate → zip the wiki to `../wheeler-dewitt-page-wootters-advaita-wiki.zip` |
